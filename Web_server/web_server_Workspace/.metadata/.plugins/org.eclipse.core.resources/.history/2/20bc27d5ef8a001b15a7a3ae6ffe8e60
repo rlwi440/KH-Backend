@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>hello web</h1>
+	<p>안녕</p>
+	<hr />
+	<ul>
+			<!--browser(Client) 젇래주소 작성시 ,localhost:9090이후를 찾게 된다. -->
+			<!-- context path 이후의 경로를 WebContent 폴더에 찾게된다. -->
+		<li><a href="/web/servlet/testPerson1.html">개취검사 -GET</a></li>
+	</ul>
+</body>
+</html>

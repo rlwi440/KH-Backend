@@ -1,0 +1,26 @@
+package member.model.service;
+
+import java.sql.Connection;
+
+import common.JDBCTemplate;
+import member.model.dao.MemberDao;
+import member.model.vo.Member;
+import static common.JDBCTemplate.*;
+
+public class MemberService {
+
+	private MemberDao memberDao = new MemberDao();
+
+	public Member selectOne(String memberId) {
+		//1.Connection객체 생성
+		//자바 프로그램에서 SQL문을 실행하기 위해 DB를 연결해주는작업 
+		Connection conn =getConnection();
+		//2.dao요청
+		Member member =memberDao.selectOne(conn,memberId);
+		//3. close
+		close(conn);
+	
+		return member;
+
+		}
+	}

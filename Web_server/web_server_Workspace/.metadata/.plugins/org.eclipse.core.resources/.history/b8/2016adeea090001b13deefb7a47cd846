@@ -1,0 +1,58 @@
+package member.model.service;
+
+import java.sql.Connection;
+
+import common.JDBCTemplate;
+import member.model.dao.MemberDao;
+import member.model.vo.Member;
+import static common.JDBCTemplate.*;
+
+public class MemberService {
+
+	private MemberDao memberDao = new MemberDao();
+	
+	public static final String MEMBER_ROLE ="U";
+	public static final String ADMIN_ROLE ="A";
+	
+	public Member selectOne(String memberId) {
+		//1.Connection객체 생성
+		//자바 프로그램에서 SQL문을 실행하기 위해 DB를 연결해주는작업 
+		Connection conn =getConnection();
+		//2.dao요청
+		Member member =memberDao.selectOne(conn,memberId);
+		//3. close
+		close(conn);
+	
+		return member;
+
+		}
+	//회원가입 결과
+	public int insertMember(Member member) {
+		//자바 프로그램에서 SQL문을 실행하기 위해 DB를 연결해주는작업 
+				Connection conn =getConnection();
+				int result=memberDao.insertMember(conn,member);
+				close(conn);
+		return result;
+	}
+	public int updateMember(Member member) {
+		Connection conn =getConnection();
+		int result=memberDao.updateMember(conn,member);
+		if(result>0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		close(conn);
+return result;
+	}
+	public int Deletemember(String memberId) {
+		Connection conn =getConnection();
+		int result= memberDao.DeleteMember(conn,memberId);
+		int(result>0){
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		close(conn);
+		}
+	}

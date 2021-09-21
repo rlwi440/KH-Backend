@@ -1,0 +1,77 @@
+package member.controller;
+
+import java.io.IOException;
+import java.sql.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import member.model.vo.Member;
+
+/**
+ * Servlet implementation class MemberEnrollServlet
+ */
+@WebServlet("/member/memberEnroll")
+public class MemberEnrollServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 회원가입페이지
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/member/memberEnroll.jsp")
+			   .forward(request, response);
+	}
+
+	/**
+	 * @실습문제  : 회원가입
+			POST /mvc/member/memberEnroll
+		회원가입성공|실패시 사용자 메시지를 띄운다.
+		요청 url을 반드시 변경(/mvc)해서 새로고침 오류를 예방한다.
+		member_role은 기본값 U 로 처리. 상수 사용할것.
+		제출된 폼의 사용자입력값은 모두 String이므로 유의할 것.
+		폼 제출전 적절한 유효성 검사를 실시할것.
+		hobby컬럼은 , (컴마) 기준으로 하나의 문자열로 합쳐서 처리할 것.
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//1.encoding처리 
+		//제출된 폼의 사용자입력값은 모두 String이므로 유의할 것.
+		request.setCharacterEncoding("utf-8");
+		//2.사용자입력갑 처리
+		//아이디
+		String memberId =request.getParameter("memberId");
+		//비밀번호
+		String password =request.getParameter("password");
+		//이름
+		String memberName =request.getParameter("memberName");
+		//성별
+		String  gender =request.getParameter("gender");
+		//생년월일
+		String birthday =request.getParameter("birthday");
+		//이메일
+		String email =request.getParameter("email");
+		//휴대폰
+		String phone =request.getParameter("phone");
+		//주소
+		String address =request.getParameter("address");
+		//취미 5개를 담기위해 
+		String[] hobbies = request.getParameterValues("hobby");
+		//hobby컬럼은 , (컴마) 기준으로 하나의 문자열로 합쳐서 처리할 것.
+		String hobby = "";
+		//각 요소 사이에 지정된 구분 기호를 사용하여 개체 배열의 요소를 연결합니다.
+		//	hobby컬럼은 , (컴마) 기준으로 하나의 문자열로 합쳐서 처리할 것.
+		if(hobbies != null) hobby = String.join(",", hobbies);
+		//날짜타입으로 변경 : 1990-09-09
+				Date birthday1 = null;
+				if(birthday != null && !"".equals(birthday))
+					birthday1 = Date.valueOf(birthday);
+			//상수 사용할것. member_role은 기본값 U 로 처리
+		Member member= new  Member(memberId,password,memberName,"U",gender,birthday1,email,phone,address,hobby,null);
+		System.out.println("member@Servlet"+member) ;
+		
+	}
+
+}

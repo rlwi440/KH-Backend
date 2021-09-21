@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>개취 검사 결과</title>
+<style>
+.recommendation {
+	font-size: 2em;
+	color: lime;
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+	<h1>개인 취향 검사 결과 jsp</h1>
+	<p>배기원님의 개인취향 검사 결과는</p>
+	<p>파랑색을 좋아합니다.</p>
+	<p>좋아하는 동물은 고양이입니다.</p>
+	<p>좋아하는 음식은 [짜장면, 짬봉]입니다.</p>
+	<hr>
+	<p class='recommendation'>오늘은 파란 파워에이드 어떠세요?</p>
+</body>
+</html>

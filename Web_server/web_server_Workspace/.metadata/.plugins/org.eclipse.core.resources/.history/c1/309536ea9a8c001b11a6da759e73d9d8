@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP </title>
+</head>
+<body>
+	<header> 
+	<h1>header</h1>
+	</header>
+	<section>
+	<h1> Content1</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta iste numquam modi error voluptas dicta nesciunt quo aut excepturi eos! Ea dolorem nesciunt ratione sint consequuntur quisquam rerum officia veritatis!</p>
+	</section>
+	<footer>
+	<h1>footer</h1>
+	</footer>
+<h1>h</h1>
+
+</body>
+</html>

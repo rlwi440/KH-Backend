@@ -1,0 +1,14 @@
+package com.kh.web.servlet;
+
+import javax.servlet.http.HttpServlet;
+/**
+ * Servlet
+ * webservice를 위한 java class
+ * HttpServlet을 상속
+ *
+ *
+ */
+
+public class TestPerson1Servlet extends HttpServlet{
+
+}

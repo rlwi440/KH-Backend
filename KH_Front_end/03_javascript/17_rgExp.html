@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/Number17.js"></script>
+    <title>js-Expression</title>
+    <style>
+        #area {
+            margin: 30px 10px;
+        }
+
+        mark {
+            background-color: deeppink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reqular Expression</h1>
+    <input type="button" value="기본" onclick="test1()">
+    <input type="button" value="flag- g| i |m" onclick="test2()">
+    <input type="button" value="anchor- ^ | $" onclick="test3()">
+    <input type="button" value="@실습문제" onclick="test4()">
+    <input type="button" value="." onclick="test5()">
+    <input type="button" value="[]" onclick="test6()">
+    <input type="button" value="\d \w \s" onclick="test8();">
+    <input type="button" value="(|)" onclick="test9()">
+    <input type="button" value="escaping" onclick="test10()">
+    <input type="button" value="*+ ?" onclick="test11()">
+    <input type="button" value="{n,m}" onclick="test12()">
+    <input type="button" value="look around" onclick="test13()">
+
+    <div id="area"></div>
+    <form action="">
+        <fieldset>
+            <legend>아이디 유효성검사</legend>
+            <input type="text" id="userId" name="userId" placeholder="아이디">
+            <input type="submit" value="제출">
+        </fieldset>
+    </form>
+    <script>
+        /**
+         * userId가 8~12자리, 영문자/숫자/특수문자 하나이상 포함, 영문자로 시작할때만 유효하다.
+         * 유효하지 않다면, 폼이 제출되어서는 안된다.
+         */
+        document.querySelector("form").onsubmit = function () {
+            var val = userId.value;
+
+            //1.userId가 8~12자리 
+            if (/^.{8,12}$/.test(val) == false) { //^첫번째 
+                alert("아이디는 8~12자리여야 합니다.");
+                return false;
+            }
+            //2.영문자/숫자/특수문자 *!^/@$ 하나이상 포함
+            if (
+                ((/[a-zA-Z]/.test(val)) &&
+                    (/[0-9]/.test(val)) &&
+                    (/[*!^/@$]/.test(val))) == false
+            ) {
+                alert("아이디는 영문자/숫자/특수문자 *!^/@$ 하나이상 포함해야 합니다.");
+                return false;
+            }
+
+            //3.영문자로 시작
+            if (/^[a-zA-Z]/.test(val) == false) {
+                alert("아이디는 영문자로 시작해야 합니다.");
+                return false;
+            }
+
+
+        };
+    </script>
+
+
+    <form action="">
+        <fieldset>
+            <legend>이메일 유효성검사</legend>
+            <input type="text" id="email" name="email" placeholder="이메일">
+            <input type="submit" value="제출">
+        </fieldset>
+    </form>
+    <script>
+        /**
+         *rlwi440
+         */
+        document.querySelector("form").onsubmit = function () {
+            var val = email.value;
+
+            //1.rlwi440앞자리 
+            if (/^[0-9a-zA-Z]/.test(val) == false) { //^첫번째 
+                alert("아이디 입력구간");
+                return false;
+            }
+            //2.@
+            if (
+                (
+                    (/[*!^/@$]/.test(val))) == false
+            ) {
+                alert("특수문자 *!^/@$");
+                return false;
+            }
+
+            //3.naver
+            //)*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*. * * -
+            if (/ [a-z A-Z]/.test(val) == false) {
+                alert("naver 구간");
+                return false;
+            }
+            //4. .com
+            if (/ [. a-z A-Z]/.test(val) == false) {
+                alert(".com구간");
+                return false;
+            }
+        };
+    </script>
+
+</body>
+
+</html>

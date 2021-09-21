@@ -1,0 +1,10 @@
+package common;
+
+public class MvcUtils {
+
+	public static String getSha512(String parameter) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

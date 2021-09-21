@@ -1,0 +1,31 @@
+package com.kh.web.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class menuServlet extends HttpServlet{
+
+	public menuServlet() {
+		super();
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+		throws ServletException, IOException {
+		//0. encoding 선언
+		request.setCharacterEncoding("utf-8");
+		//1. 사용자 입력값 처리 
+		String mainmenu=request.getParameter("main_menu");
+		String sidemenu=request.getParameter("side_menu");
+		String drinkmenu=request.getParameter("drink_menu");
+		 
+		System.out.println("main_menu" +mainmenu);
+		System.out.println("side_menu" +sidemenu);
+		System.out.println("drink_menu" +drinkmenu);
+		
+	}
+}

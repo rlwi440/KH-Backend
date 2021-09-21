@@ -1,0 +1,123 @@
+package member.model.dao;
+
+import static common.JDBCTemplate.close;
+
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import member.model.vo.Member;
+
+public class MemberDao {
+	//파일을 읽기위한 객체
+	private Properties prop = new Properties();
+	
+	public MemberDao() {
+		String fileName = 
+			MemberDao.class
+			//getResource() Url 반환 
+					 .getResource("/sql/member/member-query.properties")
+					 //getPath() : 입력된 경로 출력
+					 .getPath();
+		try {
+			prop.load(new FileReader(fileName));
+		} catch (Exception e) {
+			//printStackTrace  에러메세지의 발생 근원지를 찾아서 단계별로 에러를 출력 
+			e.printStackTrace();
+		}
+	}
+
+	public Member selectOne(Connection conn, String memberId) {
+		Member member = null;
+		//PreparedStatement 클래스, 코드 안정성 높음 과 가독성높음 
+		PreparedStatement pstmt = null;
+		//명령에 대한 반환값.
+		ResultSet rset = null;
+		//SQL의 있는 selectOne 읽어주는 역할 
+		String query = prop.getProperty("selectOne");
+		
+		try{
+			//미완성쿼리문을 가지고 객체생성.
+			pstmt = conn.prepareStatement(query);
+			//미완성 쿼리문 값대입
+			pstmt.setString(1, memberId);
+			//쿼리문실행
+			//DQL  Selector 문 조회 가 안되면 
+			rset = pstmt.executeQuery();
+			//받아오는값이 없으면 if 이 실행 안된다 
+			if(rset.next()){
+				//set,get 생성 member에서 만들어 놓은 객체 
+				/**
+				 * 	private String memberId;
+					private String password;
+					private String memberName;
+					private String memberRole;
+					private String gender;
+					private Date birthday;
+					private String email;
+					private String phone;
+					private String address;
+					private String hobby;
+					private Date enrollDate;
+				 */
+				member = new Member();
+				member.setMemberId(rset.getString("MEMBER_ID"));
+				member.setPassword(rset.getString("PASSWORD"));
+				member.setMemberName(rset.getString("MEMBER_NAME"));
+				member.setMemberRole(rset.getString("MEMBER_ROLE"));
+				member.setGender(rset.getString("GENDER"));
+				member.setBirthday(rset.getDate("BIRTHDAY"));
+				member.setEmail(rset.getString("EMAIL"));
+				member.setPhone(rset.getString("PHONE"));
+				member.setAddress(rset.getString("ADDRESS"));
+				member.setHobby(rset.getString("HOBBY"));
+				member.setEnrollDate(rset.getDate("ENROLL_DATE"));
+			}
+		}catch(Exception e){
+			//printStackTrace  에러메세지의 발생 근원지를 찾아서 단계별로 에러를 출력 
+			e.printStackTrace();
+		}finally{
+			close(rset);
+			close(pstmt);
+		}
+		return member;
+
+	}
+
+	public int insertMember(Connection conn,Member member) {
+		int result = 0;
+		//PreparedStatement 클래스, 코드 안정성 높음 과 가독성높음 
+		PreparedStatement pstmt = null;
+		String query = prop.getProperty("insertMember");
+		//DML 방식 
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, member.getMemberId());
+			pstmt.setString(2, member.getPassword());
+			pstmt.setString(3, member.getMemberName());
+			pstmt.setString(4, member.getMemberRole());
+			pstmt.setString(5, member.getGender());
+			//Date객체 
+			pstmt.setDate(6, member.getBirthday());
+			pstmt.setString(7, member.getEmail());
+			pstmt.setString(8, member.getPhone());
+			pstmt.setString(9, member.getAddress());
+			pstmt.setString(10, member.getHobby());
+			//Date 로 실행 
+			pstmt.setDate(11, member.getEnrollDate());
+			// 수행결과로 Int 타입의 값을 반환합니다. DQL 을 사용할때 
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			//printStackTrace  에러메세지의 발생 근원지를 찾아서 단계별로 에러를 출력
+			System.out.println( "회원가입 불가입니다. ");
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		return result;
+	}
+}

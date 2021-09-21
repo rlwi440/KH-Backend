@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>hello web</h1>
+	<p>안녕</p>
+	<ul>
+		<li>우와 잘된다.</li>
+	</ul>
+</body>
+</html>

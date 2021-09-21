@@ -1,0 +1,442 @@
+@charset "UTF-8";
+/*슬라이드 이미지*/
+
+/*오픈예정 리스트*/
+.earlyProjectListHeadTitle{
+	font-size:24px;
+	font-weight:700;
+	margin-top: 60px;
+	margin-bottom: 20px
+}
+.earlyProjectCardItemTitleLinkArea{
+	text-decoration: none;
+}
+.earlyProjectCardItemTitleLink,
+.earlyProjectCardDay,
+.rewordProjectCardMakerName{
+	margin:0;
+}
+.earlyProjectCardItemTitleLink{
+	/* display: block;
+	font-size:20px; */
+	/* 수정 */
+	display: -webkit-box;
+    font-size: 20px;
+    color: black;
+    width: 300px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    margin: 0;
+}
+.earlyProjectCardDay{
+	display: block;
+	font-weight:700;
+	font-size:20px;
+	color: #00b2b2;
+}
+.rewordProjectCardMakerName{
+	font-weight:700;
+	font-size:13px;
+}
+
+/*펀딩리스트*/
+/*펀딩카테고리*/
+
+.fundingCategoryContainer{
+    text-align: center;
+    
+}
+
+#fundingCategoryC0,
+#fundingCategory{
+	padding: 25px;
+    list-style: none;
+    padding-bottom: 0px;
+    margin-top: 15px;
+}
+
+.fundingCategoryList{
+    margin: auto;
+
+}
+
+.fundingCategoryListWrap{
+    display: inline-block;
+}
+
+.fundingCategoryListWrap ul{
+    padding: 0;
+    display: flex;
+}
+
+.fundingCategoryListCricle{
+    display: inline-block;
+    margin: 0;
+    width: 80px;
+    height: 118px;
+    text-align: center;
+    text-indent: 0;
+    font-size: 13px;
+    box-sizing: border-box;
+    
+}
+
+.fundingCategoryListCricleImageC0,
+.fundingCategoryListCricleImageC1,
+.fundingCategoryListCricleImageC2,
+.fundingCategoryListCricleImageC3,
+.fundingCategoryListCricleImageC4,
+.fundingCategoryListCricleImageC5,
+.fundingCategoryListCricleImageC6,
+.fundingCategoryListCricleImageC7,
+.fundingCategoryListCricleImageC8{
+    margin:auto;
+    display: block;
+    background-size: 175%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-width: 2px;
+    border: 2px white solid;
+}
+.fundingCategoryListCricleImageC0:hover,
+.fundingCategoryListCricleImageC1:hover,
+.fundingCategoryListCricleImageC2:hover,
+.fundingCategoryListCricleImageC3:hover,
+.fundingCategoryListCricleImageC4:hover,
+.fundingCategoryListCricleImageC5:hover,
+.fundingCategoryListCricleImageC6:hover,
+.fundingCategoryListCricleImageC7:hover,
+.fundingCategoryListCricleImageC8:hover{
+    border: 2px #00a2a2 solid;
+}
+
+
+.fundingCategoryListCricleImageC0{
+    background-image: url("./../image/category.jpg");
+}
+.fundingCategoryListCricleImageC1{
+    background-image: url("./../image/tech1.jpg");
+}
+.fundingCategoryListCricleImageC2{
+    background-image: url("./../image/food3.jpg");
+}
+.fundingCategoryListCricleImageC3{
+    background-image: url("./../image/trip.jpg");
+}
+.fundingCategoryListCricleImageC4{
+    background-image: url("./../image/sports.jpg");
+}
+.fundingCategoryListCricleImageC5{
+    background-image: url("./../image/game.jpg");
+}
+.fundingCategoryListCricleImageC6{
+    background-image: url("./../image/meeting2.jpg");
+}
+.fundingCategoryListCricleImageC7{
+    background-image: url("./../image/pet.jpg");
+    background-size: 150%;
+}
+.fundingCategoryListCricleImageC8{
+    background-image: url("./../image/donate.jpg");
+    background-size: 120%;
+}
+.fundingCategoryListCricleName{
+    margin-top: 8px;
+    line-height: 18px;
+    white-space: nowrap;
+    font-size: 14px;
+    color: black;
+    font-weight: 600;
+}
+/* 리셋 */
+.resetArea{
+	margin: 50px;
+}
+.reset,
+.resetBtn{
+	display:inline-block;
+}
+
+.resetBtn{
+	text-align:right;
+	cursor:pointer;
+	border:0;
+	border-radius:10%;
+	outline:0;
+}
+
+/* 카테고리 제목 */
+.fundingProjectList{
+	margin-inline: 50px;
+}
+.fundingProjectListHead{
+	border-bottom: 1px solid rgba(0,0,0,.1);
+    position: relative;
+    margin: 0 auto;
+    text-align: right;
+}
+.fundingProjectListHeadTitle{
+	font-weight: 700;
+    position: absolute;
+    font-size: 32px;
+    top: -12px;
+}
+
+input[type=search]{
+    opacity: 1;
+    outline: none;
+}
+.fundingProjectListSearch{
+    display: inline-block;
+}
+
+#searchKeyword2{
+	position:absolute;
+	top: 0;
+	right: 207px;
+	padding-right: 25px;
+	background: none;
+	width: 200px;
+	border:0;
+	border-bottom: 1px solid #BBB;
+	z-index: 1;
+}
+
+#searchButton{
+	float: right;
+	text-align: right;
+	background: url(./../image/searchicon.png) no-repeat 50%;
+	background-size: 60%;
+	position: absolute;
+    top: -3px;
+    right: 197px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgb(225, 225, 225);
+	outline: 0;
+	border-radius: 10%;
+	z-index: 2;
+}
+#searchButton:hover{
+	cursor: pointer;
+}
+#searchSelect1,
+#searchSelect2{
+	outline: 0;
+	border:0;
+	margin-bottom: 10px;
+	color:#7b7b7b;
+}
+
+/* 목록 */
+.fundingProjectCardListIn{
+    display: grid;
+    grid-template-columns: repeat(3, calc(33.33% - 30px));
+    gap: 45px;
+    margin-top: 30px;
+}
+
+/* 목록 제목 */
+
+.fundingProjectCardItem{
+    background-color: #dadada;
+}
+/*기원 이미지 background-size 변경하였습니다. */
+.fundingProjectCardItemImage{
+    height: 200px;
+    background-size: cover;
+   border-radius: 3px;
+}
+.fundingProjectCardListInfo{
+	background-color: white;
+    overflow: hidden;
+}
+.fundingProjectCardItemTitleBox{
+    height: 80px;
+}
+.fundingProjectCardItemTitleLink{
+    text-decoration: none;
+}
+
+.fundingProjectCardItemTitleLink p{
+    display: -webkit-box;
+    font-size: 20px;
+    color: black;
+    width: 300px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 600;
+    margin: 0;
+}
+
+.rewordProjectCardCategory,
+.rewordProjectCardMakerName{
+	display:block;
+    font-size: 14px;
+    font-weight: 700;
+    color:#90949c;
+    vertical-align: top;
+}
+.line{
+	border-right: 1px solid rgba(0,0,0,.1);
+	margin-right: 5px;
+}
+.rewordProjectCardCategory{
+	display:inline-block;
+}
+.rewordProjectCardMakerName{
+	display:inline-block;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top:10px;
+}
+
+.rewordProjectCardBar span{
+    display: block;
+    background-color: #00a2a2;
+    height: 2px;
+    height: 3px;
+    margin-top: 10px;
+}
+.progress{
+	height: 5px;
+}
+.rewordProjectCardPercent{
+    color: #00a2a2;
+    font-size: 15px;
+    font-weight: 600;
+}
+.rewordProjectCardAmount{
+    color: #90949c;
+    font-weight: 600;
+}
+.rewordProjectCardDay{
+    color: #90949c;
+    font-weight: 600;
+    float: right;
+}
+.pagination{
+    margin-top: 40px;
+}
+/* 페이지바 */
+#pageBar{
+	text-align: center;
+	height:50px;
+	margin-top:70px;
+	margin-bottom:40px;
+}
+#pageBar span{
+	margin-right:4px;
+    border-radius: 15%;
+    padding: 9px 15px;
+    border:1px solid #00a2a2;
+    background-color: #00a2a2;
+    text-decoration: none;
+    color: white;
+}
+#pageBar a{
+	border-radius: 15%;
+    padding: 9px 15px;
+    border:1px solid #00a2a2;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+#pageBar a:hover{
+    background-color: #00a2a2;
+    color: white;
+    transition: all ease 0.5s;
+}
+
+#pageBar a:active{
+    color: gray;
+}
+
+.emptyFundingList{
+	height:309px;
+}
+
+.emptyFundingList h4{
+	line-height:309px;
+	text-align:center;
+}
+#nonePage{
+	height:100px;
+}
+/* 현재페이지바 */
+/* #pageBar{
+	margin-top:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pageBar ul{
+    position:relative;
+    background: #fff;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+ul li.cPage
+{
+    list-style: none;
+    line-height: 50px;
+    margin: 0 5px;
+    
+}
+ul li.cPage{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+ul li.cPage a{
+    display: block;
+    text-decoration: none;
+    background: white;
+    border:1px solid #00a2a2;
+    color: #00a2a2;
+    border-radius: 50%;
+}
+ul li .cPageA{
+	display: block;
+	width: 50px;
+    height: 50px;
+	border:1px solid #00a2a2;
+	background-color:#00a2a2;
+	border-radius: 50%;
+	color: white;
+}
+ul li.cPage:hover a,
+ul li.cPage.active a{
+    transition: all ease 0.5s;
+    background-color:#00a2a2;
+    color: white;
+}
+ul li.cPage .prev{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 20px;
+}
+ul li.cPage .next{
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-weight: 700;
+    font-size: 20px;
+}
+ */

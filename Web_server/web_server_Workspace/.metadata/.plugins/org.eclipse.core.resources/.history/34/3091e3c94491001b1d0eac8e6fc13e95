@@ -1,0 +1,11 @@
+package common;
+
+public class MvcUtils {
+
+	public static String getSha512(String password) {
+		//의미가 명확한 변수를 쓰는것이 좋다 (다만 회사마다 다르다)
+		String encryptedPassword =null;
+		return encryptedPassword;
+	}
+
+}

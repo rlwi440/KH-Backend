@@ -1,0 +1,13 @@
+127.0.0.1 - - [02/Apr/2021:23:22:04 +0900] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:42 +0900] "GET /mvc HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:42 +0900] "GET /mvc/ HTTP/1.1" 200 2330
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:42 +0900] "GET /mvc/js/jquery-3.6.0.js HTTP/1.1" 200 288580
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:42 +0900] "GET /mvc/css/style.css HTTP/1.1" 200 2358
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:44 +0900] "GET /mvc/images/Java-Servlets-JSP.png HTTP/1.1" 200 36466
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:48 +0900] "POST /mvc/member/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:48 +0900] "GET /mvc HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:48 +0900] "GET /mvc/ HTTP/1.1" 200 1958
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:49 +0900] "GET /mvc/admin/memberList HTTP/1.1" 200 10426
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:49 +0900] "GET /mvc/css/admin.css HTTP/1.1" 200 713
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:54 +0900] "GET /mvc/admin/memberFinder?searchType=memberId&searchKeyword=a HTTP/1.1" 200 29959
+0:0:0:0:0:0:0:1 - - [02/Apr/2021:23:22:54 +0900] "GET /mvc/admin/memberFinder?searchType=memberId&searchKeyword=a HTTP/1.1" 200 29959

@@ -1,0 +1,47 @@
+package member.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class UpdatePasswordServlet
+ */
+@WebServlet("/member/updatePassword")
+public class UpdatePasswordServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 비밀번호 변경페이지 제공
+	 */
+	/**
+	 * @실습문제: POST /mvc/member/updatePassword
+		1. 적절한 유효성검사후 폼 제출할 것.
+		2. 기존비밀번호가 일치할때만, 신규비밀번호로 업데이트한다.
+		   기존비밀번호 일치여부를 어떻게 확인할것인가.
+		3. 신규비밀번호 업데이트후에는 
+			/mvc/member/memberView로 리다이렉트한다.
+		4. 로그인하지 않고 접근시에는 어떻게 할것인가.
+		5. POST /mvc/member/memberUpdate 는 비밀번호처리를 제외.
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("/WEB-INF/views/member/updatePassword.jsp")
+			   .forward(request, response);
+	}
+
+	/**
+	 * 비밀번호 변경처리
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//1. encoding 처리 
+		request.setCharacterEncoding("utf-8");
+		//
+		
+		
+	
+	}
+
+}

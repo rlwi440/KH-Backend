@@ -1,0 +1,517 @@
+ @charset "UTF-8"; 
+/* 캐러셀(이미지변경) 이미지 크기 변경 */
+.carousel-inner {
+	width: auto;
+	height: 468px;
+}
+
+.carousel-item img {
+	width: 100%;
+	height: 468px;
+	object-fit:cover;
+}
+/* 글자 보이는 예제*/
+.carousel-caption {
+	position: sticky !important;
+}
+
+.carousel-caption-p {
+    display: flex;
+    margin-left: 6.5vw;
+    font-size: 35px;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 600px;
+    text-align: start;
+    font-weight: 600;
+}
+
+.carousel-caption-funding {
+	display: flex;
+	margin-left: 7.2vw;
+	font-size: 15px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+/*card banner end*/
+
+/*펀딩 참여 레이아웃  start*/
+.card-project-h1{
+	font-size: 28px;
+	padding-left: 50px;
+	line-height: 34px;
+	/*와디즈 color #1D2129*/
+	color: #1D2129;
+	font-weight: 700;
+}
+/*펀딩 제목 이름*/
+.card-title{
+	color:#000000;
+	 font-size: 15px;
+    font-weight: 500;
+    width: 243px;
+    height: 40px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+   padding-top: 0.2vw;
+	
+}
+/*펀딩 참여 레이아웃  end*/
+
+/*percent API */
+.kiwonfunding-percent {
+	color: #00a2a2;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.kiwonRanking_image {
+	padding-left: 9px;
+}
+
+.kiwonfunding-percent-after {
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: 400;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	color: #90949c;
+}
+
+/* 기획전 고정 */
+.funding_class_Planning {
+	display: inline-block;
+	margin-right: 12px;
+	border: 1px solid rgba(0, 0, 0, .06);
+	padding: 0 4px;
+	vertical-align: text-bottom;
+	line-height: 1.8;
+	font-size: 10px;
+	margin-bottom: -5vw;
+	margin-left: -13vw;
+}
+
+.funding_class_Title {
+	line-height: 20px;
+	font-size: 15px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, .84);
+	display: flex;
+	margin-left: 38px;
+	margin-top: 14px;
+	white-space: nowrap;
+}
+
+.funding_class_btn {
+	position: relative;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-top: -24px;
+	padding-right: 0;
+	width: 100%;
+}
+
+/*새로고침 버튼*/
+.funding_class_btn_Plan {
+	margin-left: 37.3vw;
+	transition-property: background-color, border-color, color, opacity;
+	border: 1px solid #cdd3d8;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 9px 16px;
+	vertical-align: middle;
+	text-decoration: none;
+	line-height: 1.43;
+	white-space: nowrap;
+	color: #495057;
+	font-size: 14px;
+	font-weight: 500;
+	box-sizing: border-box !important;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	/*테두리 제거*/
+	border: none;
+}
+
+.funding_class_btn_Number {
+	vertical-align: top;
+}
+/*펀딩 참여 레이아웃  end*/
+
+/* 실시간 랭킹  start*/
+.bd-sidebar-body {
+	height: 100%;
+	display: block;
+	float: right;
+	margin-top:45px;
+	width: 380px;
+}
+
+.bd-sidebar-body h1 {
+	font-weight: 700;
+	line-height: 4px;
+	 /*컬러 조정*/
+	color: #1D2129;
+	font-size: 32px;
+}
+.btn btn-secondary active:hover{
+	background-color: #17A2BB;
+	border-color: #17A2BB;
+}
+
+.bd-sidebar-body .nav {
+	display: block;
+}
+
+.bd-sidebar-body .nav>li>a {
+	display: block;
+	padding: .25rem 1.5rem;
+	font-size: 90%;
+}
+
+.btn-group, .btn-group-vertical {
+	padding-top: 20px;
+	padding-left: 9px;
+	position: relative;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	vertical-align: middle;
+	padding-bottom: 8px;
+}
+
+.Ranking_class-p1 {
+	font-size: 15px;
+	font-weight: 400;
+	position: relative;
+	display:flex;
+	padding-left: 2vw;
+}
+/*여러줄 자르기 */
+.Ranking_class-span{
+	width: 200px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 45px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.kiwon_Ranking h1 {
+	text-align: right;
+	margin-top: -26vw;
+	margin-right: 220px;
+	display: block;
+	font-weight: 700;
+	line-height: 4px;
+	/*와디즈 컬러조정 */
+	color: #1D2129;
+}
+
+.kiwon_Ranking-funding {
+	display: inline-flex;
+	float: right;
+	margin-right: 18.5vw;
+	margin-top: 23px;
+}
+
+.kiwon_Rankingbtn-funding {
+	position: relative;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	line-height: 20px;
+	font-size: 15px;
+}
+
+/*after 방식 */
+.kiwon_Rankingbtn-funding::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	height: 1px;
+	content: "";
+}
+
+.kiwon_Ranking-invest {
+	display: inline-flex;
+	float: right;
+	margin-right: -9.5vw;
+	margin-top: 22px;
+}
+
+.kiwon_Rankingbtn-invest {
+	position: relative;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 0;
+	line-height: 20px;
+	font-size: 15px;
+}
+
+
+.kiwon_Rankingbtn-invest::after {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	height: 1px;
+	content: "";
+}
+
+/*진행중 뱃지 */
+.kiwon_Ranking_badge {
+	/*글자 사이 간격 조절*/
+	letter-spacing: 0;
+	font-size: 10px;
+	font-weight: 400;
+	font-style: normal;
+	position: relative;
+	 /* align 속성값을 설정함.*/
+	align-self: start;
+	margin-left: 8px;
+	margin-top:6px;
+	border-radius: 4px;
+	background-color: #557cf2;
+	padding: 3px 5px;
+	line-height: 13px;
+	color: #fff;
+}
+
+.kiwon_Ranking_badge::after {
+	position: absolute;
+	top: 50%;
+	left: -4px;
+	 /* 화살표 방향 체크 */
+	transform: translateY(-50%);
+	z-index: -1;
+	border-color: transparent #557cf2 transparent transparent;
+	border-style: solid;
+	border-width: 4px 7px 4px 0;
+	height: 1px;
+	content: "";
+}
+.question{
+	 position: absolute;
+	 /*우선순위 첫번째*/
+    z-index: 1;
+    background-color: rgb(52, 58, 64);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    max-width: 252px;
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+    margin-left: 6vw;
+    display: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.kiwonRanking_percent {
+	color: #00a2a2;
+	font-weight: 700;
+	font-size: 14px;
+	padding-left: 2vw;
+	margin-top: -1vw;
+}
+
+.orderText {
+	padding-block: 12px;
+	display: flex;
+	line-height: 23px;
+	float: right;
+	font-size: 13px;
+	color: #000000;
+}
+
+.orderText-span {
+	font-size: 30px;
+	position: absolute;
+}
+/* 실시간 랭킹  end*/
+
+/* 얼리버드 start*/
+.Ealrybird_Paging {
+	float: right;
+	margin-top: -3.5vw;
+	margin-right: 32px;
+}
+
+.Earlybird_Container {
+	position: relative;
+	padding-top: 1.2vw;
+}
+
+.Earlybird_Container-h1 {
+	margin-left: 40px;
+	line-height: 32px;
+	font-size: 28px;
+	font-weight: 700;
+	color: rgba(0, 0, 0, .84);
+}
+
+.Earlybird_Container-p {
+	color: rgba(0, 0, 0, .84);
+	font-weight: 500;
+	margin: 0 auto;
+	padding-left:43px;
+	line-height: 10px;
+	font-size: 15px;
+}
+
+/* EarlybirdCard start*/
+.EarlybirdCard_Type {
+	border: 1px solid #e6eaed;
+	padding-left: 15px;
+}
+
+.EarlybirdCard_Type .EarlybirdCard_Type-p {
+	font-size: 14px;
+	font-weight: 500;
+	margin-top: 15px;
+}
+
+.EalrybirdCard_Type_h1 {
+	    font-size: 12px;
+    white-space: nowrap;
+    font-weight: 800;
+    margin-bottom: 8px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 350px;
+}
+
+.EalrybirdCard_percent-span {
+	color: #00a2a2;
+	font-weight: 700;
+}
+
+.EalrybirdCard_percent-span:after {
+	white-space: nowrap;
+	width: 100%;
+	color: #90949c;
+	margin-left: 5px;
+}
+
+.cardType_earlybordContent {
+	border: 1px solid #e6eaed;
+	border-radius: 3px;
+	padding-left: 18px;
+	margin-bottom: 10px;
+}
+
+.cardType_earlybordContent .cardType_earlybordContent-h2 {
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.cardType_earlybordContent-p {
+	font-weight: 600;
+	text-align: center;
+	color: rgba(0, 0, 0, .54);
+	line-height: 36px;
+}
+/* 얼리버드 end*/
+
+/*실시간랭킹 좋아요 start*/
+.likeProject{
+	    display: inline-flex;
+    margin-left: 2vw;
+}
+.p-likeProject{
+	margin-left: 3vw;
+    font-weight: 700;
+    line-height: 4px;
+    color: #1D2129;
+    font-size: 22px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.card-text-p{
+	 font-size: 15px;
+   font-weight: 400;
+}
+.card-text-p1{
+	 color: #00a2a2;
+   font-weight: 700;
+   font-size: 14px;
+   position: absolute;
+}
+.card-text-span{
+	 line-height: 18px;
+   font-size: 13px;
+   font-weight: 400;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 100%;
+   color: #90949c;
+}
+/* 실시간랭킹 좋아요  end*/
+
+/*이미지 배너  start*/
+.image-banner{
+	position: relative;
+	
+}
+.image-banner-h1{
+ position: absolute;
+    top: 20%;
+    left: 32%;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 1;
+}
+.image-banner-span{
+	    position: absolute;
+    z-index: 1;
+    color: #ffffff;
+    top: 37%;
+    left: 32%;
+    line-height: 33px;
+    font-weight: 500;
+    font-size: 20px;
+}
+/*이미지 배너 end*/
+.slide-title{
+       position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left: 160px;
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+}
+.slide-title span{
+   	  color: white;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    -webkit-line-clamp: 3;
+    width: 570px;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+@media (max-width: 1100px) {
+.carousel {
+    position: relative;
+    width: 1300px;
+	}
+}

@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 (복습공부)</title>
+</head>
+<script>
+/*
+ * 회원가입 예제 복습공부 
+ */
+function checkInfo() {
+	let form=document.form;
+	if(form.id.value=="") {
+        alert("아이디 입력");
+        form.passwd.select();
+        return; 
+        }
+        else if(form.passwd.value=="")
+        {
+        alert("비밀번호 입력");
+        form.passwd.select();
+        return;
+        }
+    if((form.passwd.value).search(form.id.value)>-1)
+        {
+        alert("비밀번호는 ID를 포함할 수 없습니다.");
+        return;
+        }
+    form.submit();
+	
+	
+}
+	</script>
+<body>
+
+</body>
+</html>

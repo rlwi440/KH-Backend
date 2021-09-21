@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family:"NanumGothic";
+	src:url('/font/NanumGothic.eot');
+	src:url('/font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+	url('/font/NanumGothic.woff') format('woff'),
+	url('/font/NanumGothic.svg#NanumGothic') format('svg');
+	src:local(※), url('/font/NanumGothic.woff') format('woff');
+	}
+
+html * {
+	font-family:"NanumGothic";
+}
+
+html, body {
+	margin: 0 auto;
+	padding: 0;
+}
+
+header {
+	margin: 0 auto;
+    width: 1300px;
+    /*height 5px; 추가 하였습니다 .(기원)*/
+    height: 65px;
+    position: relative;
+    border-bottom: 1px solid lightgray;
+    margin-top: 0.5vw;
+}
+
+/*(기원) 드래그 selection 추가  (드래그 color적용)했습니다. */
+::selection{
+	background-color:rgba(0, 0, 0, 0.1);
+	color:  #00a2a2;
+}
+header nav ol{
+	position:absolute;
+	left:0;
+	top:0;
+	list-style: none;
+	display: flex;
+	margin:0;
+	padding:0;
+}
+header nav ol li{
+	margin-left:20px;
+	margin-right:20px;
+	font-size: 22px;
+	line-height: 60px;
+	font-weight: bold;
+}
+
+section {
+	margin: 0 auto;
+	width: 1300px;
+	position:relative;
+}
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+}
+a:hover {
+	text-decoration: none !important;
+}
+a:focus {
+	text-decoration: none !important;
+}
+a:active {
+	color: tomato;
+}
+#index_searchBar_container{
+	position:absolute;
+	right:400px;
+	top:10px;
+	width:400px;	
+	height:40px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 30px;
+    border: 2px solid #00b2b2;
+    color: #00b2b2;
+}
+#searchBar_relative{
+	position:relative;
+	width:400px;	
+	height:40px;
+}
+#searchBar_relative svg{
+	position: absolute;
+	left:10px;
+	top:10px;
+}
+#searchBar_relative input{
+	position:absolute;
+	right:10px;
+	top:3px;
+	width:350px;
+	height:35px;
+	background:none;
+	border:none;
+	text-align:center;
+	font-size:16px !important;
+}
+/*기원 css 수정하였습니다.*/
+#btn_login{
+	position: absolute;
+    width: 90px;
+    right: 280px;
+    top: 9px;
+    color: #60656a;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center !important;
+    border: none;
+}
+/*기원 css 수정하였습니다.*/
+#btn_login:hover {
+	    color: #00a2a2;
+    background: none;
+    box-shadow: none;
+}
+/*기원 css 수정하였습니다.*/
+#btn_enroll{
+	position: absolute;
+    width: 90px;
+    right: 200px;
+    top: 9px;
+    color: #60656a;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center !important;
+    border: none;
+}
+/*기원 css 수정하였습니다.*/
+#btn_enroll:hover{
+	    color: #00a2a2;
+    background: none;
+    box-shadow: none;
+}
+#project_open{
+	position:absolute;
+	width:180px;
+	height:35px;
+	right:0;
+	top:12px;
+	border:2px solid #00b2b2;
+	color: #00b2b2;
+	font-weight: bold;
+	text-align:center !important;
+	font-size:16px !important;
+}
+#project_open:hover{
+	color:white;
+	background-color: #00b2b2;
+}
+
+#login_container{
+	position:absolute;
+	width:200px;
+	height:50px;
+	right:175px;
+	top:5px;
+	text-align:center;
+}
+#login_relative{
+	position:relative;
+	width:200px;
+	height:50px;
+}
+#login_relative svg{
+	position:absolute;
+	left:0px;
+	top:12px;
+	cursor:pointer;
+}
+#login_relative span{
+	position:absolute;
+	right:15px;
+	top:10px;
+	font-size:16px;
+}
+#login_relative span a{
+	font-weight:bold;
+	font-size:20px;
+}
+.msgTitle{
+	width:460px;
+	height:25px;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.msgFrom{
+	width:460px;
+	height:25px;
+	text-align: right;
+}
+.msgContainer, .msgContainer2{
+	width:465px;
+	height:52px;
+	margin:2px;
+	padding:0;
+	border-radius: 10px;
+}
+.hide{
+	display: none;
+}
+.textRight{
+	text-align: right;
+}
+.modal-title,.msgTitle{
+	font-weight:bold;
+}
+.bRadius{
+	border-radius: 10px;	
+}
+
+
+.MessageNotRead{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+	 -moz-animation:blink 1.5s ease-in-out infinite alternate;
+	  animation:blink 1.5s ease-in-out infinite alternate;
+	  color: #00b2b28c;
+} 
+
+@-webkit-keyframes blink{
+	0% {opacity:0;} 
+	100% {opacity:1;} 
+}
+
+@-moz-keyframes blink{
+	0% {opacity:0;} 
+	100% {opacity:1;} 
+} 
+@keyframes blink{
+	0% {opacity:0;}
+	100% {opacity:1;} 
+}
+

@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- POM 모델 버전  -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- 그룹 ID -->
+  <groupId>com.kh</groupId>
+  <!-- 아티팩트 ID -->
+  <artifactId>maven-mybatis</artifactId>
+  <!-- 프로그램 버전 -->
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- 패키지 이름  -->
+  <name>maven-mybatis-project</name>
+  <!-- 설명 공간 -->
+  <description>메이블/마이바티스 학습프로젝트</description>
+  
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<!--
+	<dependency> 
+	<groupId>그룹 ID</groupId> 
+	<artifactId>아티팩트 ID</artifactId> 
+	<version>버전</version> 
+	<scope>범위</scope> 
+	</ dependency>
+	 -->
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>2.8.6</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.4.6</version>
+	</dependency>
+  </dependencies>
+</project>

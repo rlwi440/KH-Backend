@@ -1,0 +1,22 @@
+package member.model.service;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import member.model.dao.MemberDao;
+import member.model.vo.Member;
+
+public class MemberService {
+
+	private MemberDao memberDao = new MemberDao();
+
+	public Member selectOne(String memberId) {
+		//SQL문을 담은 String 갹체 
+		PreparedStatement pstmt = null;
+		ResultSet rset =null;
+		String query = prop.getProperty("insertProduct_IO");
+		
+		return null;
+	}
+	
+}

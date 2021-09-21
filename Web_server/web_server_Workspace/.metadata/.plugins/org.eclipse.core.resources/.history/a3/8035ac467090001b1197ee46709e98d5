@@ -1,0 +1,48 @@
+package member.controller;
+
+import java.io.IOException;
+import java.sql.Date;
+import java.util.Calendar;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class memberUpdateservlet
+ */
+@WebServlet("/member/memberUpdate")
+public class memberUpdateServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//2.사용자입력갑 처리
+				//아이디
+				String memberId =request.getParameter("memberId");
+				//비밀번호
+				String password =request.getParameter("password");
+				//이름
+				String memberName =request.getParameter("memberName");
+				//성별
+				String  gender =request.getParameter("gender");
+				//생년월일
+				String birthday =request.getParameter("birthday");
+				//이메일
+				String email =request.getParameter("email");
+				//휴대폰
+				String phone =request.getParameter("phone");
+				//주소
+				String address =request.getParameter("address");
+				//취미 5개를 담기위해 
+				String[] hobbies = request.getParameterValues("hobby");
+				//hobby컬럼은 , (컴마) 기준으로 하나의 문자열로 합쳐서 처리할 것.
+				String hobby = "";
+				//현재 날짜가져오기
+				//Calender 날짜가져오기 
+				Date enrollDate =new Date(Calendar.getInstance().getTimeInMillis());
+				
+	}
+
+}

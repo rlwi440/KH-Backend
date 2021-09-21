@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	
+	<!-- 김윤수 -->
+	<select id="selectEmailCheck" resultType="_int" >
+		select count(*) 
+		from member
+		where email = #{email}
+	</select>
+
+	<insert id="insertMemberIf">
+		insert into member(member_no, email, password, name, platform, reg_date) 
+		values(seq_member_no.nextval, #{email}, #{password}, #{name}, #{platform}, default)
+	</insert>	
+	
+	<insert id="insertMemberKakao">
+		insert into member(member_no, email, password, name, platform, reg_date) 
+		values(seq_member_no.nextval, #{email}, #{password}, #{name}, #{platform}, default)
+	</insert>
+	
+	<select id="selectOneMember" resultType="member">
+		select * 
+		from member
+		where email = #{email} and platform='IF'
+	</select>
+	
+	<select id="selectOneMemberUseNo" resultType="member">
+		select * 
+		from member
+		where member_no = #{toMemberNo}
+	</select>
+	
+	<insert id="insertPoint">
+		insert into point
+		values( seq_point_no.nextval, default, #{point}, #{memberNo}, #{memo} )
+	</insert>
+	
+	<select id="selectOneCoupon" resultType="coupon">
+		select * 
+		from coupon
+		where code = #{couponText}
+	</select>
+	
+	<select id="selectCouponRecordCheck" resultType="_int">
+		select count(*)
+		from coupon_record
+		where member_no = #{memberNo} and coupon_no = #{couponNo}
+	</select>
+	
+	<insert id="insertCoupon">
+		insert into coupon_record
+		values( seq_coupon_record_no.nextval, #{couponNo}, #{memberNo}, #{point} )
+	</insert>
+	
+	<select id="selectReceiveMsg" resultMap="MsgMap">
+		select *
+		from message
+		where to_member_no = #{memberNo}
+		order by no desc
+	</select>
+	
+	<select id="selectSendMsg" resultMap="MsgMap">
+		select * 
+		from message
+		where from_member_no = #{memberNo}
+		order by no desc
+	</select>
+	<insert id="sendMsg">
+		insert into message
+		values(seq_message_no.nextval, #{toMemberNo}, #{fromMemberNo}, #{fromMemberName}, #{title}, #{content}, default, #{toMemberName})
+	</insert>
+	
+	<update id="msgReadStatusChg">
+		update message
+		set read = 'Y'
+		where no = #{no}
+	</update>
+	
+	<resultMap type="msg" id="MsgMap">
+		<result column="read" property="read" typeHandler="booleanYnTypeHandler"/>
+	</resultMap>
+	
+	<insert id="insertCertificationCode">
+		insert into pwd_certification
+		values (seq_pwd_certification_no.nextval, #{member.memberNo}, #{code})
+	</insert>
+	
+	<select id="selectOneCertification" resultMap="certificationMap">
+		select * from pwd_certification
+		where member_no = #{memberNo}
+	</select>
+	<resultMap type="map" id="certificationMap">
+		<id column="no" property="no"/>
+		<result column="member_no" property="memberNo"/>
+		<result column="certification_code" property="certificationCode"/>
+	</resultMap>
+	
+	<update id="changePassword">
+		update member
+		set password = #{password}
+		where member_no = #{memberNo}
+	</update>
+	
+	<delete id="deleteCertificationCode">
+		delete from pwd_certification
+		where member_no = #{memberNo}
+	</delete>
+	
+	<select id="selectOneMemberKakao" resultMap="memberMap">
+		select * 
+		from member
+		where email = #{email} and platform= 'KAKAO'
+	</select>
+	<resultMap type="member" id="memberMap">
+		<id column="member_no" property="memberNo"/>
+		<result column="email" property="email"/>
+		<result column="password" property="password"/>
+		<result column="name" property="name"/>
+		<result column="platform" property="platform"/>
+		<result column="access_token" property="accessToken"/>
+		<result column="point" property="point"/>
+		<result column="reg_date" property="regDate"/>
+		<result column="phone" property="phone"/>
+		<collection property="authorities" 
+					javaType="arraylist"
+					column="member_no"
+					ofType="simpleGrantedAuthority"
+					select="selectAuthorities"/>
+	</resultMap>
+	<select id="selectAuthorities" resultMap="authoritiesMap">
+		select * 
+		from authority
+		where member_no = #{memberNo}
+	</select>
+	<resultMap type="simpleGrantedAuthority" id="authoritiesMap">
+		<constructor>
+			<arg column="authority" javaType="string"/>
+		</constructor>
+	</resultMap>
+	
+	<select id="selectOneBlackList" resultType="_int">
+		select count(*)
+		from blackList
+		where email = #{email}
+	</select>
+	<!-- 김경태 -->
+	<!-- 김주연 -->
+	<update id="savePhone">
+		update
+			member
+		set
+			phone = #{phone}
+		where
+			member_no = #{memberNo}
+	</update>
+	<!-- 박요한 -->
+	<!-- 배기원 -->
+	<!-- 이승우 -->
+	<!-- 천호현 -->
+	
+	<select id="selectOneMemberPoint" resultType="string">
+	    select point
+	    from member
+	    where member_no = #{memberNo}
+	</select>
+	
+	
+</mapper>
