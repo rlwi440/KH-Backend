@@ -2,10 +2,6 @@
 [KH]스마트 콘텐츠 융합 응용SW 엔지니어 양성과정 중 파이널프로젝트 이며 "와디즈 " 라는사이트 클론코딩으로 구현한 사이트입니다 
 구현기간:2021/ 06/03 ~ 2021/07/08 입니다.
 
-### [<img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1575521120/noticon/i5eacjfzdcmshu5xfqtc.png" width="120">](http://interact-funding.kro.kr/)  
-
-##### 이미지를 클릭시 구현한사이트 로 이동합니다.
-
 ## 2. 프로젝트 요구사항
 
 ### - 프로젝트 전반
